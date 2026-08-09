@@ -50,7 +50,7 @@ export const ShowTracksScreen: React.FC<ShowTracksScreenProps> = ({ tracks, onBa
                 </span>
               </div>
               <h2 className="text-lg md:text-xl font-extrabold text-slate-900 truncate">
-                Gate 6 Industrial Site • Map Overview
+                Valaliky Industrial Park • Map Overview
               </h2>
             </div>
           </div>

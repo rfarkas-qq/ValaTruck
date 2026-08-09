@@ -21,10 +21,10 @@ export const LANGUAGES: LanguageOption[] = [
 export const TRANSLATIONS = {
   en: {
     // Header
-    siteHub: "Gate 6 Site Hub",
+    siteHub: "Valaliky Industrial Park Hub",
     offlineTilesReady: "Offline Tiles Ready",
-    subTitle: "Gate 6 Industrial Site • Private Route Guidance System",
-    gate6Hub: "Gate 6 Hub",
+    subTitle: "Valaliky Industrial Park • Private Route Guidance System",
+    gate6Hub: "Valaliky Hub",
     reloadTracks: "Reload Tracks",
     showTracks: "Show Tracks",
     allTracksOverview: "All Tracks Overview",
@@ -87,10 +87,10 @@ export const TRANSLATIONS = {
   },
   sk: {
     // Header
-    siteHub: "Dispečing Brána 6",
+    siteHub: "Dispečing Valaliky Industrial Park",
     offlineTilesReady: "Offline mapy pripravené",
-    subTitle: "Priemyselný areál Brána 6 • Súkromný navigátor nakladky",
-    gate6Hub: "Uzol Brána 6",
+    subTitle: "Valaliky Industrial Park • Súkromný navigátor nakladky",
+    gate6Hub: "Uzol Valaliky",
     reloadTracks: "Obnoviť trasy",
     showTracks: "Zobraziť trasy",
     allTracksOverview: "Prehľad všetkých trás",
@@ -153,10 +153,10 @@ export const TRANSLATIONS = {
   },
   ro: {
     // Header
-    siteHub: "Hub Poarta 6",
+    siteHub: "Hub Valaliky Industrial Park",
     offlineTilesReady: "Hărți offline pregătite",
-    subTitle: "Situl Industrial Poarta 6 • Sistem privat de navigare",
-    gate6Hub: "Hub Poarta 6",
+    subTitle: "Valaliky Industrial Park • Sistem privat de navigare",
+    gate6Hub: "Hub Valaliky",
     reloadTracks: "Reîncarcă rutele",
     showTracks: "Afișează rutele",
     allTracksOverview: "Prezentare generală a tuturor rutelor",
@@ -219,10 +219,10 @@ export const TRANSLATIONS = {
   },
   hu: {
     // Header
-    siteHub: "6-os Kapu Csomópont",
+    siteHub: "Valaliky Industrial Park Központ",
     offlineTilesReady: "Off-line térképek kész",
-    subTitle: "6-os Kapu Ipari Terület • Magán útvonalnavigáció",
-    gate6Hub: "6-os Kapu Központ",
+    subTitle: "Valaliky Industrial Park • Magán útvonalnavigáció",
+    gate6Hub: "Valaliky Központ",
     reloadTracks: "Útvonalak újratöltése",
     showTracks: "Útvonalak megjelenítése",
     allTracksOverview: "Összes útvonal áttekintése",
@@ -285,10 +285,10 @@ export const TRANSLATIONS = {
   },
   de: {
     // Header
-    siteHub: "Tor 6 Standort-Hub",
+    siteHub: "Valaliky Industrial Park Hub",
     offlineTilesReady: "Offline-Karten bereit",
-    subTitle: "Industriegelände Tor 6 • Privates Routennavigationssystem",
-    gate6Hub: "Tor 6 Hub",
+    subTitle: "Valaliky Industrial Park • Privates Routennavigationssystem",
+    gate6Hub: "Valaliky Hub",
     reloadTracks: "Routen neu laden",
     showTracks: "Routen anzeigen",
     allTracksOverview: "Übersicht aller Routen",
@@ -351,10 +351,10 @@ export const TRANSLATIONS = {
   },
   pl: {
     // Header
-    siteHub: "Węzeł Bramy 6",
+    siteHub: "Węzeł Valaliky Industrial Park",
     offlineTilesReady: "Mapy offline gotowe",
-    subTitle: "Teren Przemysłowy Brama 6 • Prywatny System Nawigacji",
-    gate6Hub: "Baza Brama 6",
+    subTitle: "Valaliky Industrial Park • Prywatny System Nawigacji",
+    gate6Hub: "Baza Valaliky",
     reloadTracks: "Odśwież trasy",
     showTracks: "Pokaż trasy",
     allTracksOverview: "Przegląd wszystkich tras",
@@ -417,10 +417,10 @@ export const TRANSLATIONS = {
   },
   cs: {
     // Header
-    siteHub: "Dispečink Brána 6",
+    siteHub: "Dispečink Valaliky Industrial Park",
     offlineTilesReady: "Offline mapy připraveny",
-    subTitle: "Průmyslový areál Brána 6 • Soukromá navigace nákladní dopravy",
-    gate6Hub: "Uzel Brána 6",
+    subTitle: "Valaliky Industrial Park • Soukromá navigace nákladní dopravy",
+    gate6Hub: "Uzel Valaliky",
     reloadTracks: "Obnovit trasy",
     showTracks: "Zobrazit trasy",
     allTracksOverview: "Přehled všech tras",
@@ -483,10 +483,10 @@ export const TRANSLATIONS = {
   },
   tr: {
     // Header
-    siteHub: "Kapı 6 Saha Merkezi",
+    siteHub: "Valaliky Industrial Park Saha Merkezi",
     offlineTilesReady: "Çevrimdışı Haritalar Hazır",
-    subTitle: "Kapı 6 Sanayi Sahası • Özel Güzergah Navigasyon Sistemi",
-    gate6Hub: "Kapı 6 Merkezi",
+    subTitle: "Valaliky Industrial Park • Özel Güzergah Navigasyon Sistemi",
+    gate6Hub: "Valaliky Merkezi",
     reloadTracks: "Rotaları Yenile",
     showTracks: "Rotaları Göster",
     allTracksOverview: "Tüm Rotalara Genel Bakış",
@@ -549,10 +549,10 @@ export const TRANSLATIONS = {
   },
   uk: {
     // Header
-    siteHub: "Диспетчерська Ворота 6",
+    siteHub: "Диспетчерська Valaliky Industrial Park",
     offlineTilesReady: "Офлайн-карти готові",
-    subTitle: "Промзона Ворота 6 • Приватна навігаційна система",
-    gate6Hub: "Вузол Ворота 6",
+    subTitle: "Valaliky Industrial Park • Приватна навігаційна система",
+    gate6Hub: "Вузол Valaliky",
     reloadTracks: "Оновити маршрути",
     showTracks: "Показати маршрути",
     allTracksOverview: "Огляд усіх маршрутів",

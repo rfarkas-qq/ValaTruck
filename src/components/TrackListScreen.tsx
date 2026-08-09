@@ -52,7 +52,7 @@ export const TrackListScreen: React.FC<TrackListScreenProps> = ({ onSelectTrack,
             <div className="flex flex-wrap items-center gap-2 mb-1">
               <span className="bg-sky-100 text-sky-800 border border-sky-200 text-xs font-bold px-2.5 py-0.5 rounded-md uppercase tracking-wider flex items-center gap-1.5">
                 <Truck className="w-3.5 h-3.5 text-sky-700" />
-                CAT 777G #402 • {t("siteHub")}
+                {t("siteHub")}
               </span>
               <span className="bg-emerald-100 text-emerald-800 border border-emerald-200 text-xs font-semibold px-2.5 py-0.5 rounded-md flex items-center gap-1">
                 <Wifi className="w-3 h-3 text-emerald-600 animate-pulse" /> {t("offlineTilesReady")}
