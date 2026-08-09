@@ -7,6 +7,7 @@
   estimatedMinutes: 3
   speedLimitKmH: 30
   maxGradientPercent: 2
+  vehicleType: truck
   waypoints:
     - name: Volvo Gate 6
       lat: 48.624456
@@ -46,6 +47,7 @@
   estimatedMinutes: 2
   speedLimitKmH: 40
   maxGradientPercent: 3
+  vehicleType: truck
   waypoints:
     - name: Volvo Gate 3
       lat: 48.641932
@@ -86,6 +88,7 @@
   estimatedMinutes: 1
   speedLimitKmH: 25
   maxGradientPercent: 1
+  vehicleType: truck
   waypoints:
     - name: Volvo Parking Entry
       lat: 48.633988

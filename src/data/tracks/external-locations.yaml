@@ -8,6 +8,7 @@
   speedLimitKmH: 50
   maxGradientPercent: 0
   isExternalOnly: true
+  vehicleType: "<3.5t"
   waypoints:
     - name: Adient
       lat: 48.62260381624869
@@ -25,6 +26,7 @@
   speedLimitKmH: 50
   maxGradientPercent: 0
   isExternalOnly: true
+  vehicleType: "<3.5t"
   waypoints:
     - name: Pneuservis
       lat: 48.62293004440501
@@ -42,6 +44,7 @@
   speedLimitKmH: 50
   maxGradientPercent: 0
   isExternalOnly: true
+  vehicleType: pedestrian
   waypoints:
     - name: Valaliky Industrial Park
       lat: 48.630932338350966

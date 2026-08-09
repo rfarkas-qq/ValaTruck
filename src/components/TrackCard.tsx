@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Track } from "@/data/tracks";
-import { Navigation, Gauge, Clock, MapPin, ArrowRight, ExternalLink, Globe } from "lucide-react";
+import { Navigation, Gauge, Clock, MapPin, ArrowRight, ExternalLink, Globe, Truck, Car, Footprints } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 interface TrackCardProps {
@@ -21,6 +21,33 @@ export const TrackCard: React.FC<TrackCardProps> = ({ track, onSelectTrack }) =>
 
   const mapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${startLat},${startLng}`;
 
+  const renderVehicleBadge = (type?: "truck" | "<3.5t" | "pedestrian") => {
+    switch (type) {
+      case "<3.5t":
+        return (
+          <span className="bg-amber-100 text-amber-900 border border-amber-300/80 text-[10px] font-extrabold px-2 py-0.5 rounded flex items-center gap-1">
+            <Car className="w-3 h-3 text-amber-700" />
+            &lt;3.5t
+          </span>
+        );
+      case "pedestrian":
+        return (
+          <span className="bg-emerald-100 text-emerald-900 border border-emerald-300/80 text-[10px] font-extrabold px-2 py-0.5 rounded flex items-center gap-1">
+            <Footprints className="w-3 h-3 text-emerald-700" />
+            Pedestrian
+          </span>
+        );
+      case "truck":
+      default:
+        return (
+          <span className="bg-sky-100 text-sky-900 border border-sky-300/80 text-[10px] font-extrabold px-2 py-0.5 rounded flex items-center gap-1">
+            <Truck className="w-3 h-3 text-sky-700" />
+            Truck
+          </span>
+        );
+    }
+  };
+
   return (
     <div className="group relative bg-white border border-slate-200 hover:border-sky-500/60 rounded-2xl p-5 md:p-6 transition-all duration-200 shadow-md hover:shadow-xl flex flex-col justify-between">
       {/* Top Banner Accent Line */}
@@ -33,11 +60,12 @@ export const TrackCard: React.FC<TrackCardProps> = ({ track, onSelectTrack }) =>
         {/* Header Row: Title & Destination & Badge */}
         <div className="flex items-start justify-between gap-3 mb-3">
           <div>
-            <div className="flex items-center gap-2 mb-1">
+            <div className="flex flex-wrap items-center gap-2 mb-1">
               <span className="inline-flex items-center gap-1.5 text-xs font-semibold tracking-wider text-sky-700 uppercase">
                 <MapPin className="w-3.5 h-3.5 text-sky-600" />
                 {track.destinationName}
               </span>
+              {renderVehicleBadge(track.vehicleType)}
               {isSinglePoint && (
                 <span className="bg-purple-100 text-purple-800 border border-purple-200 text-[10px] font-bold px-2 py-0.5 rounded uppercase flex items-center gap-1">
                   <Globe className="w-3 h-3 text-purple-600" />

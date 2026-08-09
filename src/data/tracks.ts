@@ -3,6 +3,8 @@
 
 import type { FeatureCollection, LineString, Point } from "geojson";
 
+export type VehicleType = "truck" | "<3.5t" | "pedestrian";
+
 export interface TrackWaypoint {
   name: string;
   lat: number;
@@ -22,6 +24,7 @@ export interface Track {
   speedLimitKmH: number;
   maxGradientPercent: number;
   isExternalOnly?: boolean;
+  vehicleType?: VehicleType;
   waypoints: TrackWaypoint[];
   geojson: FeatureCollection<LineString | Point>;
 }
@@ -38,6 +41,7 @@ export const MOCK_TRACKS: Track[] = [
     "speedLimitKmH": 50,
     "maxGradientPercent": 0,
     "isExternalOnly": true,
+    "vehicleType": "<3.5t",
     "waypoints": [
       {
         "name": "Adient",
@@ -78,6 +82,7 @@ export const MOCK_TRACKS: Track[] = [
     "speedLimitKmH": 50,
     "maxGradientPercent": 0,
     "isExternalOnly": true,
+    "vehicleType": "<3.5t",
     "waypoints": [
       {
         "name": "Pneuservis",
@@ -118,6 +123,7 @@ export const MOCK_TRACKS: Track[] = [
     "speedLimitKmH": 50,
     "maxGradientPercent": 0,
     "isExternalOnly": true,
+    "vehicleType": "pedestrian",
     "waypoints": [
       {
         "name": "Valaliky Industrial Park",
@@ -158,6 +164,7 @@ export const MOCK_TRACKS: Track[] = [
     "speedLimitKmH": 30,
     "maxGradientPercent": 2,
     "isExternalOnly": false,
+    "vehicleType": "truck",
     "waypoints": [
       {
         "name": "Volvo Gate 6",
@@ -274,6 +281,7 @@ export const MOCK_TRACKS: Track[] = [
     "speedLimitKmH": 40,
     "maxGradientPercent": 3,
     "isExternalOnly": false,
+    "vehicleType": "truck",
     "waypoints": [
       {
         "name": "Volvo Gate 3",
@@ -394,6 +402,7 @@ export const MOCK_TRACKS: Track[] = [
     "speedLimitKmH": 25,
     "maxGradientPercent": 1,
     "isExternalOnly": false,
+    "vehicleType": "truck",
     "waypoints": [
       {
         "name": "Volvo Parking Entry",

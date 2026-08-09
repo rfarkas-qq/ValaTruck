@@ -18,6 +18,7 @@ interface RawYamlTrack {
   speedLimitKmH: number;
   maxGradientPercent: number;
   isExternalOnly?: boolean;
+  vehicleType?: "truck" | "<3.5t" | "pedestrian";
   waypoints: Array<{
     name: string;
     lat: number;
@@ -105,6 +106,7 @@ export async function GET() {
             speedLimitKmH: item.speedLimitKmH,
             maxGradientPercent: item.maxGradientPercent,
             isExternalOnly: item.isExternalOnly || false,
+            vehicleType: item.vehicleType || "truck",
             waypoints: item.waypoints,
             geojson,
           });
