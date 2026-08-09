@@ -19,16 +19,16 @@ This document describes the software architecture, component structure, state ma
 
 ```mermaid
 flowchart TD
-    subgraph Data Layer
-        YAML[YAML Files in src/data/tracks/*.yaml]
-        Compiler[scripts/parse-yaml-tracks.mjs]
-        GenTS[src/data/tracks.ts]
-        API[/api/tracks Route Handler]
+    subgraph "Data Layer"
+        YAML["YAML Files in src/data/tracks/*.yaml"]
+        Compiler["scripts/parse-yaml-tracks.mjs"]
+        GenTS["src/data/tracks.ts"]
+        API["/api/tracks Route Handler"]
     end
 
-    subgraph React Application State
-        Page[src/app/page.tsx - Screen Switcher]
-        LangCtx[LanguageContext.tsx]
+    subgraph "React Application State"
+        Page["src/app/page.tsx - Screen Switcher"]
+        LangCtx["LanguageContext.tsx"]
     end
 
     subgraph UI Views
@@ -77,6 +77,7 @@ type ViewMode = "list" | "navigate" | "overview";
 ## 4. Leaflet Map Engine & Dynamic SSR Handling
 
 ### SSR Safety Pattern
+
 Leaflet accesses the DOM `window` object directly upon instantiation. In Next.js App Router, components render on the server by default. To prevent `window is not defined` errors during server-side pre-rendering:
 
 1. Map containers (`MapContainerComponent.tsx` and `OverviewMapContainerComponent.tsx`) import Leaflet and React-Leaflet directly.
@@ -93,6 +94,7 @@ const DynamicMapContainer = dynamic(
 ```
 
 ### Custom Leaflet Pin Markers
+
 Leaflet default PNG markers often break when bundled with Next.js Turbopack. ValaTruck utilizes Leaflet's `L.divIcon` to render custom HTML/SVG pin markers with inline Tailwind styles for crisp vector rendering at any zoom level:
 
 - **Track Badge Markers**: White pill containers with colored borders matching `track.routeColor`.
