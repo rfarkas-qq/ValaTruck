@@ -47,9 +47,6 @@ export const TrackListScreen: React.FC<TrackListScreenProps> = ({ onSelectTrack 
           </div>
 
           <div className="flex items-center gap-3 shrink-0">
-            {/* Language Selector */}
-            <LanguageSelector />
-
             {/* Zone Info Card */}
             <div className="flex items-center gap-3 bg-white border border-slate-200 p-3 rounded-xl shadow-sm shrink-0">
               <div className="w-10 h-10 rounded-lg bg-sky-50 border border-sky-200 flex items-center justify-center text-sky-700 font-bold">
@@ -61,6 +58,9 @@ export const TrackListScreen: React.FC<TrackListScreenProps> = ({ onSelectTrack 
                 <div className="text-slate-500 font-mono">{t("gate6Hub")} (21.281°E)</div>
               </div>
             </div>
+
+            {/* Language Selector */}
+            <LanguageSelector />
           </div>
         </header>
 
