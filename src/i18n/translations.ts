@@ -24,8 +24,8 @@ export const TRANSLATIONS = {
     siteHub: "Gate 6 Site Hub",
     offlineTilesReady: "Offline Tiles Ready",
     subTitle: "Gate 6 Industrial Site • Private Route Guidance System",
-    zoneBounds: "Zone Bounds",
     gate6Hub: "Gate 6 Hub",
+    reloadTracks: "Reload Tracks",
 
     // Search
     searchPlaceholder: "Search route by title or destination...",
@@ -88,8 +88,8 @@ export const TRANSLATIONS = {
     siteHub: "Dispečing Brána 6",
     offlineTilesReady: "Offline mapy pripravené",
     subTitle: "Priemyselný areál Brána 6 • Súkromný navigátor nakladky",
-    zoneBounds: "Hranice zóny",
     gate6Hub: "Uzol Brána 6",
+    reloadTracks: "Obnoviť trasy",
 
     // Search
     searchPlaceholder: "Hľadať trasu podľa názvu alebo cieľa...",
@@ -152,8 +152,8 @@ export const TRANSLATIONS = {
     siteHub: "Hub Poarta 6",
     offlineTilesReady: "Hărți offline pregătite",
     subTitle: "Situl Industrial Poarta 6 • Sistem privat de navigare",
-    zoneBounds: "Limita zonei",
     gate6Hub: "Hub Poarta 6",
+    reloadTracks: "Reîncarcă rutele",
 
     // Search
     searchPlaceholder: "Căutați ruta după titlu sau destinație...",
@@ -216,8 +216,8 @@ export const TRANSLATIONS = {
     siteHub: "6-os Kapu Csomópont",
     offlineTilesReady: "Off-line térképek kész",
     subTitle: "6-os Kapu Ipari Terület • Magán útvonalnavigáció",
-    zoneBounds: "Zóna határok",
     gate6Hub: "6-os Kapu Központ",
+    reloadTracks: "Útvonalak újratöltése",
 
     // Search
     searchPlaceholder: "Útvonal keresése név vagy cél szerint...",
@@ -280,8 +280,8 @@ export const TRANSLATIONS = {
     siteHub: "Tor 6 Standort-Hub",
     offlineTilesReady: "Offline-Karten bereit",
     subTitle: "Industriegelände Tor 6 • Privates Routennavigationssystem",
-    zoneBounds: "Zonengrenzen",
     gate6Hub: "Tor 6 Hub",
+    reloadTracks: "Routen neu laden",
 
     // Search
     searchPlaceholder: "Route nach Name oder Ziel suchen...",
@@ -344,8 +344,8 @@ export const TRANSLATIONS = {
     siteHub: "Węzeł Bramy 6",
     offlineTilesReady: "Mapy offline gotowe",
     subTitle: "Teren Przemysłowy Brama 6 • Prywatny System Nawigacji",
-    zoneBounds: "Granice Strefy",
     gate6Hub: "Baza Brama 6",
+    reloadTracks: "Odśwież trasy",
 
     // Search
     searchPlaceholder: "Szukaj trasy według nazwy lub celu...",
@@ -408,8 +408,8 @@ export const TRANSLATIONS = {
     siteHub: "Dispečink Brána 6",
     offlineTilesReady: "Offline mapy připraveny",
     subTitle: "Průmyslový areál Brána 6 • Soukromá navigace nákladní dopravy",
-    zoneBounds: "Hranice zóny",
     gate6Hub: "Uzel Brána 6",
+    reloadTracks: "Obnovit trasy",
 
     // Search
     searchPlaceholder: "Hledat trasu podle názevu nebo cíle...",
@@ -472,8 +472,8 @@ export const TRANSLATIONS = {
     siteHub: "Kapı 6 Saha Merkezi",
     offlineTilesReady: "Çevrimdışı Haritalar Hazır",
     subTitle: "Kapı 6 Sanayi Sahası • Özel Güzergah Navigasyon Sistemi",
-    zoneBounds: "Bölge Sınırları",
     gate6Hub: "Kapı 6 Merkezi",
+    reloadTracks: "Rotaları Yenile",
 
     // Search
     searchPlaceholder: "Rota adıyla veya hedefle arayın...",
@@ -536,8 +536,8 @@ export const TRANSLATIONS = {
     siteHub: "Диспетчерська Ворота 6",
     offlineTilesReady: "Офлайн-карти готові",
     subTitle: "Промзона Ворота 6 • Приватна навігаційна система",
-    zoneBounds: "Межі зони",
     gate6Hub: "Вузол Ворота 6",
+    reloadTracks: "Оновити маршрути",
 
     // Search
     searchPlaceholder: "Пошук маршруту за назвою або пунктом призначення...",

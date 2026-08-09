@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { Track, MOCK_TRACKS } from "@/data/tracks";
 import { TrackCard } from "./TrackCard";
-import { Truck, Wifi, Search, Info } from "lucide-react";
+import { Truck, Wifi, Search, Info, RotateCcw } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { LanguageSelector } from "./LanguageSelector";
 
@@ -12,10 +12,29 @@ interface TrackListScreenProps {
 }
 
 export const TrackListScreen: React.FC<TrackListScreenProps> = ({ onSelectTrack }) => {
+  const [tracks, setTracks] = useState<Track[]>(MOCK_TRACKS);
   const [searchQuery, setSearchQuery] = useState("");
+  const [isReloading, setIsReloading] = useState(false);
   const { t } = useLanguage();
 
-  const filteredTracks = MOCK_TRACKS.filter((track) => {
+  const handleReloadTracks = async () => {
+    setIsReloading(true);
+    try {
+      const res = await fetch(`/api/tracks?t=${Date.now()}`);
+      if (res.ok) {
+        const data = await res.json();
+        if (Array.isArray(data) && data.length > 0) {
+          setTracks(data);
+        }
+      }
+    } catch (err) {
+      console.error("Failed to reload tracks:", err);
+    } finally {
+      setTimeout(() => setIsReloading(false), 400);
+    }
+  };
+
+  const filteredTracks = tracks.filter((track) => {
     return (
       track.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       track.destinationName.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -47,17 +66,16 @@ export const TrackListScreen: React.FC<TrackListScreenProps> = ({ onSelectTrack 
           </div>
 
           <div className="flex items-center gap-3 shrink-0">
-            {/* Zone Info Card */}
-            <div className="flex items-center gap-3 bg-white border border-slate-200 p-3 rounded-xl shadow-sm shrink-0">
-              <div className="w-10 h-10 rounded-lg bg-sky-50 border border-sky-200 flex items-center justify-center text-sky-700 font-bold">
-                G6
-              </div>
-              <div className="text-xs">
-                <div className="text-slate-800 font-semibold">{t("zoneBounds")}</div>
-                <div className="text-slate-600">48.622°N - 48.645°N</div>
-                <div className="text-slate-500 font-mono">{t("gate6Hub")} (21.281°E)</div>
-              </div>
-            </div>
+            {/* Reload Tracks Button */}
+            <button
+              onClick={handleReloadTracks}
+              disabled={isReloading}
+              className="h-10 px-3.5 bg-white border border-slate-200 hover:border-sky-500 text-slate-700 hover:text-sky-700 font-bold rounded-xl flex items-center gap-2 text-xs shadow-sm hover:shadow active:scale-95 transition-all disabled:opacity-50"
+              title={t("reloadTracks")}
+            >
+              <RotateCcw className={`w-4 h-4 text-sky-600 ${isReloading ? "animate-spin" : ""}`} />
+              <span className="hidden sm:inline">{t("reloadTracks")}</span>
+            </button>
 
             {/* Language Selector */}
             <LanguageSelector />
