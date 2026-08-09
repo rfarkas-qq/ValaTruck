@@ -36,6 +36,8 @@ export const TRANSLATIONS = {
     distance: "Distance",
     speedLimit: "Speed Limit",
     startNavigation: "Start Navigation",
+    navigateToStart: "Navigate to Start Point",
+    startPoint: "Start",
 
     // Navigation Header
     backToRoutes: "Back to Routes",
@@ -95,6 +97,8 @@ export const TRANSLATIONS = {
     distance: "Vzdialenosť",
     speedLimit: "Rýchl. limit",
     startNavigation: "Spustiť navigáciu",
+    navigateToStart: "Navigovať na začiatok trasy",
+    startPoint: "Štart",
 
     // Navigation Header
     backToRoutes: "Späť na trasy",
@@ -154,6 +158,8 @@ export const TRANSLATIONS = {
     distance: "Distanță",
     speedLimit: "Limită viteză",
     startNavigation: "Pornește navigarea",
+    navigateToStart: "Navighează la punctul de pornire",
+    startPoint: "Start",
 
     // Navigation Header
     backToRoutes: "Înapoi la rute",
@@ -213,6 +219,8 @@ export const TRANSLATIONS = {
     distance: "Távolság",
     speedLimit: "Sebességhatár",
     startNavigation: "Navigáció indítása",
+    navigateToStart: "Navigáció a kezdőponthoz",
+    startPoint: "Start",
 
     // Navigation Header
     backToRoutes: "Vissza az útvonalakhoz",
@@ -272,6 +280,8 @@ export const TRANSLATIONS = {
     distance: "Entfernung",
     speedLimit: "Tempolimit",
     startNavigation: "Navigation starten",
+    navigateToStart: "Zum Startpunkt navigieren",
+    startPoint: "Start",
 
     // Navigation Header
     backToRoutes: "Zurück zu den Routen",
@@ -331,6 +341,8 @@ export const TRANSLATIONS = {
     distance: "Dystans",
     speedLimit: "Ograniczenie",
     startNavigation: "Rozpocznij nawigację",
+    navigateToStart: "Nawiguj do punktu startowego",
+    startPoint: "Start",
 
     // Navigation Header
     backToRoutes: "Powrót do tras",
@@ -390,6 +402,8 @@ export const TRANSLATIONS = {
     distance: "Vzdálenost",
     speedLimit: "Rychl. limit",
     startNavigation: "Spustit navigaci",
+    navigateToStart: "Navigovat na začátek trasy",
+    startPoint: "Start",
 
     // Navigation Header
     backToRoutes: "Zpět na trasy",
@@ -449,6 +463,8 @@ export const TRANSLATIONS = {
     distance: "Mesafe",
     speedLimit: "Hız Sınırı",
     startNavigation: "Navigasyonu Başlat",
+    navigateToStart: "Başlangıç Noktasına Yol Tarifi Al",
+    startPoint: "Başlangıç",
 
     // Navigation Header
     backToRoutes: "Rotalara Dön",
@@ -508,6 +524,8 @@ export const TRANSLATIONS = {
     distance: "Відстань",
     speedLimit: "Обмеження",
     startNavigation: "Розпочати навігацію",
+    navigateToStart: "Навігація до точки старту",
+    startPoint: "Старт",
 
     // Navigation Header
     backToRoutes: "Назад до маршрутів",

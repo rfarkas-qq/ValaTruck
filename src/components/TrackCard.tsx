@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Track } from "@/data/tracks";
-import { Navigation, Gauge, Clock, MapPin, ArrowRight } from "lucide-react";
+import { Navigation, Gauge, Clock, MapPin, ArrowRight, ExternalLink } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 interface TrackCardProps {
@@ -12,6 +12,12 @@ interface TrackCardProps {
 
 export const TrackCard: React.FC<TrackCardProps> = ({ track, onSelectTrack }) => {
   const { t } = useLanguage();
+
+  const startWpt = track.waypoints[0];
+  const startLat = startWpt?.lat ?? 48.624454;
+  const startLng = startWpt?.lng ?? 21.281608;
+
+  const mapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${startLat},${startLng}`;
 
   return (
     <div className="group relative bg-white border border-slate-200 hover:border-sky-500/60 rounded-2xl p-5 md:p-6 transition-all duration-200 shadow-md hover:shadow-xl flex flex-col justify-between">
@@ -62,15 +68,31 @@ export const TrackCard: React.FC<TrackCardProps> = ({ track, onSelectTrack }) =>
         </div>
       </div>
 
-      {/* Driver Touch Action Button */}
-      <button
-        onClick={() => onSelectTrack(track.id)}
-        className="w-full h-14 bg-sky-600 hover:bg-sky-500 active:bg-sky-700 text-white font-bold text-lg rounded-xl flex items-center justify-center gap-3 transition-all transform active:scale-[0.98] shadow-lg shadow-sky-600/20"
-      >
-        <Navigation className="w-6 h-6 fill-current" />
-        <span>{t("startNavigation")}</span>
-        <ArrowRight className="w-5 h-5 ml-auto mr-2 opacity-80 group-hover:translate-x-1 transition-transform" />
-      </button>
+      {/* Action Buttons Stack */}
+      <div className="flex flex-col gap-2.5">
+        {/* External Public Route Navigation Button */}
+        <a
+          href={mapsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full h-11 bg-slate-100 hover:bg-slate-200 active:bg-slate-300 border border-slate-300 text-slate-800 font-semibold text-xs rounded-xl flex items-center justify-center gap-2 transition-all shadow-sm"
+          title={`${t("navigateToStart")} (${startWpt?.name || "Start"})`}
+        >
+          <MapPin className="w-4 h-4 text-rose-600" />
+          <span className="truncate">{t("navigateToStart")}</span>
+          <ExternalLink className="w-3.5 h-3.5 text-slate-500 shrink-0 ml-auto mr-1" />
+        </a>
+
+        {/* Driver Touch Site Navigation Action Button */}
+        <button
+          onClick={() => onSelectTrack(track.id)}
+          className="w-full h-14 bg-sky-600 hover:bg-sky-500 active:bg-sky-700 text-white font-bold text-base md:text-lg rounded-xl flex items-center justify-center gap-3 transition-all transform active:scale-[0.98] shadow-lg shadow-sky-600/20"
+        >
+          <Navigation className="w-5 h-5 md:w-6 md:h-6 fill-current" />
+          <span>{t("startNavigation")}</span>
+          <ArrowRight className="w-5 h-5 ml-auto mr-2 opacity-80 group-hover:translate-x-1 transition-transform" />
+        </button>
+      </div>
     </div>
   );
 };
