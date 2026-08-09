@@ -1,0 +1,110 @@
+- id: route-volvo-gate6-dock1
+  title: Volvo Gate 6 - Dock 1 Propulsion
+  description: Site haul route from Volvo Gate 6 south entrance to Dock 1 Propulsion assembly facility.
+  destinationName: Dock 1 Propulsion
+  routeColor: "#3b82f6"
+  distanceKm: 1.1
+  estimatedMinutes: 3
+  speedLimitKmH: 30
+  maxGradientPercent: 2
+  waypoints:
+    - name: Volvo Gate 6
+      lat: 48.624456
+      lng: 21.281591
+      instruction: Depart Gate 6 North-East on site access road
+      type: start
+    - name: South Access Junction
+      lat: 48.625044
+      lng: 21.283424
+      instruction: Turn North onto primary site arterial road
+      type: turn
+    - name: Rail Crossing
+      lat: 48.629825
+      lng: 21.28149
+      instruction: Cross rail track and turn East towards Dock 1
+      type: checkpoint
+    - name: Dock 1 Propulsion
+      lat: 48.631187
+      lng: 21.28573
+      instruction: Destination reached. Proceed to Dock 1 unloader
+      type: end
+  geojsonCoordinates:
+    - [21.28159116086397, 48.62445566290185]
+    - [21.28322022466934, 48.62482668513832]
+    - [21.2834241331526, 48.62504409522188]
+    - [21.28136267152346, 48.62953666746868]
+    - [21.2814903492412, 48.62982498459337]
+    - [21.2859293101348, 48.63074538516652]
+    - [21.28573025173174, 48.63118733639318]
+
+- id: route-volvo-gate3-utility
+  title: Volvo Gate 3 - Utility Building
+  description: Northern perimeter haul track connecting Gate 3 entrance to Central Utility Building.
+  destinationName: Utility Building
+  routeColor: "#10b981"
+  distanceKm: 0.85
+  estimatedMinutes: 2
+  speedLimitKmH: 40
+  maxGradientPercent: 3
+  waypoints:
+    - name: Volvo Gate 3
+      lat: 48.641932
+      lng: 21.285557
+      instruction: Depart Gate 3 West towards perimeter road
+      type: start
+    - name: North Perimeter Curve
+      lat: 48.640776
+      lng: 21.285141
+      instruction: Follow curve South-East along plant perimeter
+      type: turn
+    - name: Central Corridor Junction
+      lat: 48.638175
+      lng: 21.286229
+      instruction: Turn West into Utility Building corridor
+      type: checkpoint
+    - name: Utility Building
+      lat: 48.637177
+      lng: 21.281441
+      instruction: Destination reached. Park at Utility Building bay
+      type: end
+  geojsonCoordinates:
+    - [21.28555745020595, 48.6419318174159]
+    - [21.28494001779687, 48.6417933531948]
+    - [21.28480799038665, 48.64153215887459]
+    - [21.28514133991127, 48.64077560300024]
+    - [21.28551601489147, 48.64023519627856]
+    - [21.28640207671229, 48.63841602589045]
+    - [21.28622902777045, 48.63817530946864]
+    - [21.28144111197573, 48.637176850909]
+
+- id: route-volvo-parking-biw
+  title: Volvo Parking - BiW
+  description: Short logistics transfer route from Volvo Main Parking to Body in White (BiW) workshop.
+  destinationName: BiW (Body in White)
+  routeColor: "#f59e0b"
+  distanceKm: 0.35
+  estimatedMinutes: 1
+  speedLimitKmH: 25
+  maxGradientPercent: 1
+  waypoints:
+    - name: Volvo Parking Entry
+      lat: 48.633988
+      lng: 21.280225
+      instruction: Depart Parking East along staging lane
+      type: start
+    - name: Staging Lane Turn
+      lat: 48.634215
+      lng: 21.280786
+      instruction: Turn West towards BiW workshop alley
+      type: turn
+    - name: BiW Workshop
+      lat: 48.635339
+      lng: 21.279134
+      instruction: Destination reached. Unload at BiW bay
+      type: end
+  geojsonCoordinates:
+    - [21.2802247319898, 48.63398792408699]
+    - [21.28083941417397, 48.63410586630263]
+    - [21.28078584161234, 48.63421462123839]
+    - [21.27975429213417, 48.63400561083911]
+    - [21.27913406508455, 48.63533872783684]
