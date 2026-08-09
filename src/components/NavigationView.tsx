@@ -210,12 +210,14 @@ export const NavigationView: React.FC<NavigationViewProps> = ({ track, onBackToR
               </h2>
             </div>
 
-            <div className="hidden md:flex items-center gap-3 shrink-0 pl-3 border-l border-slate-200 text-xs text-slate-600">
-              <div className="text-right">
-                <div className="text-slate-400 font-medium">{t("limit")}</div>
-                <div className="font-bold text-amber-600 text-sm">{track.speedLimitKmH} km/h</div>
+            {track.vehicleType !== "pedestrian" && (
+              <div className="hidden md:flex items-center gap-3 shrink-0 pl-3 border-l border-slate-200 text-xs text-slate-600">
+                <div className="text-right">
+                  <div className="text-slate-400 font-medium">{t("limit")}</div>
+                  <div className="font-bold text-amber-600 text-sm">{track.speedLimitKmH} km/h</div>
+                </div>
               </div>
-            </div>
+            )}
           </div>
 
           {/* Language Selector */}

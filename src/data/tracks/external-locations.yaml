@@ -8,7 +8,7 @@
   speedLimitKmH: 50
   maxGradientPercent: 0
   isExternalOnly: true
-  vehicleType: "<3.5t"
+  vehicleType: truck
   waypoints:
     - name: Adient
       lat: 48.62260381624869
@@ -26,7 +26,7 @@
   speedLimitKmH: 50
   maxGradientPercent: 0
   isExternalOnly: true
-  vehicleType: "<3.5t"
+  vehicleType: truck
   waypoints:
     - name: Pneuservis
       lat: 48.62293004440501

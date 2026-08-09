@@ -86,7 +86,7 @@ export const TrackCard: React.FC<TrackCardProps> = ({ track, onSelectTrack }) =>
 
         {/* Spec Stats Grid */}
         {!isSinglePoint ? (
-          <div className="grid grid-cols-2 gap-3 p-3 bg-slate-100/90 rounded-xl border border-slate-200 mb-5">
+          <div className={`grid ${track.vehicleType === "pedestrian" ? "grid-cols-1" : "grid-cols-2"} gap-3 p-3 bg-slate-100/90 rounded-xl border border-slate-200 mb-5`}>
             <div className="flex flex-col items-center justify-center p-1 text-center">
               <span className="text-xs text-slate-500 font-semibold flex items-center gap-1">
                 <Clock className="w-3.5 h-3.5 text-slate-500" /> {t("distance")}
@@ -96,14 +96,16 @@ export const TrackCard: React.FC<TrackCardProps> = ({ track, onSelectTrack }) =>
               </span>
             </div>
 
-            <div className="flex flex-col items-center justify-center p-1 text-center border-l border-slate-200">
-              <span className="text-xs text-slate-500 font-semibold flex items-center gap-1">
-                <Gauge className="w-3.5 h-3.5 text-slate-500" /> {t("speedLimit")}
-              </span>
-              <span className="text-base font-bold text-amber-600 mt-0.5">
-                {track.speedLimitKmH} <span className="text-xs text-slate-500 font-normal">km/h</span>
-              </span>
-            </div>
+            {track.vehicleType !== "pedestrian" && (
+              <div className="flex flex-col items-center justify-center p-1 text-center border-l border-slate-200">
+                <span className="text-xs text-slate-500 font-semibold flex items-center gap-1">
+                  <Gauge className="w-3.5 h-3.5 text-slate-500" /> {t("speedLimit")}
+                </span>
+                <span className="text-base font-bold text-amber-600 mt-0.5">
+                  {track.speedLimitKmH} <span className="text-xs text-slate-500 font-normal">km/h</span>
+                </span>
+              </div>
+            )}
           </div>
         ) : (
           <div className="p-3 bg-purple-50/70 rounded-xl border border-purple-200/80 mb-5 text-center text-xs text-purple-900 font-medium flex items-center justify-center gap-2">

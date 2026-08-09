@@ -41,7 +41,7 @@ export const MOCK_TRACKS: Track[] = [
     "speedLimitKmH": 50,
     "maxGradientPercent": 0,
     "isExternalOnly": true,
-    "vehicleType": "<3.5t",
+    "vehicleType": "truck",
     "waypoints": [
       {
         "name": "Adient",
@@ -82,7 +82,7 @@ export const MOCK_TRACKS: Track[] = [
     "speedLimitKmH": 50,
     "maxGradientPercent": 0,
     "isExternalOnly": true,
-    "vehicleType": "<3.5t",
+    "vehicleType": "truck",
     "waypoints": [
       {
         "name": "Pneuservis",
@@ -281,7 +281,7 @@ export const MOCK_TRACKS: Track[] = [
     "speedLimitKmH": 40,
     "maxGradientPercent": 3,
     "isExternalOnly": false,
-    "vehicleType": "truck",
+    "vehicleType": "<3.5t",
     "waypoints": [
       {
         "name": "Volvo Gate 3",
@@ -402,7 +402,7 @@ export const MOCK_TRACKS: Track[] = [
     "speedLimitKmH": 25,
     "maxGradientPercent": 1,
     "isExternalOnly": false,
-    "vehicleType": "truck",
+    "vehicleType": "pedestrian",
     "waypoints": [
       {
         "name": "Volvo Parking Entry",
