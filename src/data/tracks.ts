@@ -22,24 +22,22 @@ export interface Track {
   geojson: FeatureCollection<LineString | Point>;
 }
 
-// Bounding Box: SW (48.62210, 21.26526) to NE (48.64500, 21.29384)
-// Starting Point (Gate 6): 48.624454, 21.281608
 export const MOCK_TRACKS: Track[] = [
   {
-    id: "route-gate6-scrap-yard",
-    title: "Gate 6 to Heavy Scrap Yard #2",
-    description: "Primary site arterial route from Gate 6 through East Access Road to Scrap Yard #2.",
-    destinationName: "Heavy Scrap Yard #2",
+    id: "route-volvo-gate6-dock1",
+    title: "Volvo Gate 6 - Dock 1 Propulsion",
+    description: "Site haul route from Volvo Gate 6 south entrance to Dock 1 Propulsion assembly facility.",
+    destinationName: "Dock 1 Propulsion",
     routeColor: "#3b82f6", // Electric Blue
-    distanceKm: 2.4,
-    estimatedMinutes: 6,
-    speedLimitKmH: 40,
-    maxGradientPercent: 3,
+    distanceKm: 1.1,
+    estimatedMinutes: 3,
+    speedLimitKmH: 30,
+    maxGradientPercent: 2,
     waypoints: [
-      { name: "Gate 6", lat: 48.624454, lng: 21.281608, instruction: "Depart Gate 6 heading North-East on main access road", type: "start" },
-      { name: "East Access Junction", lat: 48.62850, lng: 21.28420, instruction: "Keep Left at rail crossing junction", type: "turn" },
-      { name: "Central Rail Crossing", lat: 48.63400, lng: 21.28050, instruction: "Cross rail tracks with caution", type: "checkpoint" },
-      { name: "Heavy Scrap Yard #2", lat: 48.64120, lng: 21.27450, instruction: "Destination reached. Report to Yard Master", type: "end" }
+      { name: "Volvo Gate 6", lat: 48.624456, lng: 21.281591, instruction: "Depart Gate 6 North-East on site access road", type: "start" },
+      { name: "South Access Junction", lat: 48.625044, lng: 21.283424, instruction: "Turn North onto primary site arterial road", type: "turn" },
+      { name: "Rail Crossing", lat: 48.629825, lng: 21.281490, instruction: "Cross rail track and turn East towards Dock 1", type: "checkpoint" },
+      { name: "Dock 1 Propulsion", lat: 48.631187, lng: 21.285730, instruction: "Destination reached. Proceed to Dock 1 unloader", type: "end" }
     ],
     geojson: {
       type: "FeatureCollection",
@@ -47,56 +45,57 @@ export const MOCK_TRACKS: Track[] = [
         {
           type: "Feature",
           properties: {
-            name: "Gate 6 - Scrap Yard Track Line",
+            name: "Volvo Gate 6 - Dock 1 Line",
             stroke: "#3b82f6",
             strokeWidth: 6,
           },
           geometry: {
             type: "LineString",
             coordinates: [
-              [21.281608, 48.624454],
-              [21.28300, 48.62650],
-              [21.28420, 48.62850],
-              [21.28280, 48.63100],
-              [21.28050, 48.63400],
-              [21.27780, 48.63750],
-              [21.27450, 48.64120],
+              [21.28159116086397, 48.62445566290185],
+              [21.28322022466934, 48.62482668513832],
+              [21.2834241331526, 48.62504409522188],
+              [21.28136267152346, 48.62953666746868],
+              [21.2814903492412, 48.62982498459337],
+              [21.2859293101348, 48.63074538516652],
+              [21.28573025173174, 48.63118733639318]
             ],
           },
         },
         {
           type: "Feature",
-          properties: { name: "Gate 6 (Start)", pointType: "start" },
-          geometry: { type: "Point", coordinates: [21.281608, 48.624454] },
+          properties: { name: "Volvo Gate 6 (Start)", icon: "start" },
+          geometry: {
+            type: "Point",
+            coordinates: [21.28159116086397, 48.62445566290185],
+          },
         },
         {
           type: "Feature",
-          properties: { name: "Central Rail Crossing", pointType: "checkpoint" },
-          geometry: { type: "Point", coordinates: [21.28050, 48.63400] },
-        },
-        {
-          type: "Feature",
-          properties: { name: "Heavy Scrap Yard #2 (End)", pointType: "end" },
-          geometry: { type: "Point", coordinates: [21.27450, 48.64120] },
+          properties: { name: "Dock 1 Propulsion (End)", icon: "end" },
+          geometry: {
+            type: "Point",
+            coordinates: [21.28573025173174, 48.63118733639318],
+          },
         },
       ],
     },
   },
   {
-    id: "route-gate6-slag-terminal",
-    title: "Gate 6 to Slag Processing Terminal",
-    description: "West perimeter haul route connecting Gate 6 to the West Slag Pit and Processing Terminal.",
-    destinationName: "Slag Processing Terminal",
-    routeColor: "#38bdf8", // Sky Blue
-    distanceKm: 2.1,
-    estimatedMinutes: 7,
-    speedLimitKmH: 30,
-    maxGradientPercent: 6,
+    id: "route-volvo-gate3-utility",
+    title: "Volvo Gate 3 - Utility Building",
+    description: "Northern perimeter haul track connecting Gate 3 entrance to Central Utility Building.",
+    destinationName: "Utility Building",
+    routeColor: "#10b981", // Emerald Green
+    distanceKm: 0.85,
+    estimatedMinutes: 2,
+    speedLimitKmH: 40,
+    maxGradientPercent: 3,
     waypoints: [
-      { name: "Gate 6", lat: 48.624454, lng: 21.281608, instruction: "Depart Gate 6 heading West along Perimeter Road", type: "start" },
-      { name: "Perimeter Turn", lat: 48.62580, lng: 21.27300, instruction: "Turn Right onto West Crusher Ramp", type: "turn" },
-      { name: "West Crusher Ramp", lat: 48.63150, lng: 21.26850, instruction: "Proceed North up processing ramp", type: "checkpoint" },
-      { name: "Slag Processing Terminal", lat: 48.63900, lng: 21.26600, instruction: "Destination reached. Unload at Pit B", type: "end" }
+      { name: "Volvo Gate 3", lat: 48.641932, lng: 21.285557, instruction: "Depart Gate 3 West towards perimeter road", type: "start" },
+      { name: "North Perimeter Curve", lat: 48.640776, lng: 21.285141, instruction: "Follow curve South-East along plant perimeter", type: "turn" },
+      { name: "Central Corridor Junction", lat: 48.638175, lng: 21.286229, instruction: "Turn West into Utility Building corridor", type: "checkpoint" },
+      { name: "Utility Building", lat: 48.637177, lng: 21.281441, instruction: "Destination reached. Park at Utility Building bay", type: "end" }
     ],
     geojson: {
       type: "FeatureCollection",
@@ -104,56 +103,57 @@ export const MOCK_TRACKS: Track[] = [
         {
           type: "Feature",
           properties: {
-            name: "Gate 6 - Slag Terminal Track Line",
-            stroke: "#38bdf8",
+            name: "Volvo Gate 3 - Utility Line",
+            stroke: "#10b981",
             strokeWidth: 6,
           },
           geometry: {
             type: "LineString",
             coordinates: [
-              [21.281608, 48.624454],
-              [21.27700, 48.62500],
-              [21.27300, 48.62580],
-              [21.27050, 48.62850],
-              [21.26850, 48.63150],
-              [21.26700, 48.63500],
-              [21.26600, 48.63900],
+              [21.28555745020595, 48.6419318174159],
+              [21.28494001779687, 48.6417933531948],
+              [21.28480799038665, 48.64153215887459],
+              [21.28514133991127, 48.64077560300024],
+              [21.28551601489147, 48.64023519627856],
+              [21.28640207671229, 48.63841602589045],
+              [21.28622902777045, 48.63817530946864],
+              [21.28144111197573, 48.637176850909]
             ],
           },
         },
         {
           type: "Feature",
-          properties: { name: "Gate 6 (Start)", pointType: "start" },
-          geometry: { type: "Point", coordinates: [21.281608, 48.624454] },
+          properties: { name: "Volvo Gate 3 (Start)", icon: "start" },
+          geometry: {
+            type: "Point",
+            coordinates: [21.28555745020595, 48.6419318174159],
+          },
         },
         {
           type: "Feature",
-          properties: { name: "West Crusher Ramp", pointType: "checkpoint" },
-          geometry: { type: "Point", coordinates: [21.26850, 48.63150] },
-        },
-        {
-          type: "Feature",
-          properties: { name: "Slag Processing Terminal (End)", pointType: "end" },
-          geometry: { type: "Point", coordinates: [21.26600, 48.63900] },
+          properties: { name: "Utility Building (End)", icon: "end" },
+          geometry: {
+            type: "Point",
+            coordinates: [21.28144111197573, 48.637176850909],
+          },
         },
       ],
     },
   },
   {
-    id: "route-gate6-blast-furnace",
-    title: "Gate 6 to Blast Furnace Depot #3",
-    description: "East internal haul track connecting Gate 6 via South Weighbridge to Blast Furnace Depot #3.",
-    destinationName: "Blast Furnace Depot #3",
-    routeColor: "#6366f1", // Indigo
-    distanceKm: 2.7,
-    estimatedMinutes: 9,
+    id: "route-volvo-parking-biw",
+    title: "Volvo Parking - BiW",
+    description: "Short logistics transfer route from Volvo Main Parking to Body in White (BiW) workshop.",
+    destinationName: "BiW (Body in White)",
+    routeColor: "#f59e0b", // Amber
+    distanceKm: 0.35,
+    estimatedMinutes: 1,
     speedLimitKmH: 25,
-    maxGradientPercent: 4,
+    maxGradientPercent: 1,
     waypoints: [
-      { name: "Gate 6", lat: 48.624454, lng: 21.281608, instruction: "Depart Gate 6 through South Weighbridge", type: "start" },
-      { name: "South Weighbridge", lat: 48.62650, lng: 21.28350, instruction: "Stop for inbound weight check", type: "checkpoint" },
-      { name: "Bypass Loop", lat: 48.63200, lng: 21.28850, instruction: "Follow Eastern bypass curve", type: "turn" },
-      { name: "Blast Furnace Depot #3", lat: 48.64350, lng: 21.28920, instruction: "Destination reached. Park in Loading Bay 1", type: "end" }
+      { name: "Volvo Parking Entry", lat: 48.633988, lng: 21.280225, instruction: "Depart Parking East along staging lane", type: "start" },
+      { name: "Staging Lane Turn", lat: 48.634215, lng: 21.280786, instruction: "Turn West towards BiW workshop alley", type: "turn" },
+      { name: "BiW Workshop", lat: 48.635339, lng: 21.279134, instruction: "Destination reached. Unload at BiW bay", type: "end" }
     ],
     geojson: {
       type: "FeatureCollection",
@@ -161,37 +161,36 @@ export const MOCK_TRACKS: Track[] = [
         {
           type: "Feature",
           properties: {
-            name: "Gate 6 - Blast Furnace Track Line",
-            stroke: "#6366f1",
+            name: "Volvo Parking - BiW Line",
+            stroke: "#f59e0b",
             strokeWidth: 6,
           },
           geometry: {
             type: "LineString",
             coordinates: [
-              [21.281608, 48.624454],
-              [21.28350, 48.62650],
-              [21.28600, 48.62900],
-              [21.28850, 48.63200],
-              [21.28950, 48.63600],
-              [21.28980, 48.64000],
-              [21.28920, 48.64350],
+              [21.2802247319898, 48.63398792408699],
+              [21.28083941417397, 48.63410586630263],
+              [21.28078584161234, 48.63421462123839],
+              [21.27975429213417, 48.63400561083911],
+              [21.27913406508455, 48.63533872783684]
             ],
           },
         },
         {
           type: "Feature",
-          properties: { name: "Gate 6 (Start)", pointType: "start" },
-          geometry: { type: "Point", coordinates: [21.281608, 48.624454] },
+          properties: { name: "Volvo Parking (Start)", icon: "start" },
+          geometry: {
+            type: "Point",
+            coordinates: [21.2802247319898, 48.63398792408699],
+          },
         },
         {
           type: "Feature",
-          properties: { name: "South Weighbridge", pointType: "checkpoint" },
-          geometry: { type: "Point", coordinates: [21.28350, 48.62650] },
-        },
-        {
-          type: "Feature",
-          properties: { name: "Blast Furnace Depot #3 (End)", pointType: "end" },
-          geometry: { type: "Point", coordinates: [21.28920, 48.64350] },
+          properties: { name: "BiW Workshop (End)", icon: "end" },
+          geometry: {
+            type: "Point",
+            coordinates: [21.27913406508455, 48.63533872783684],
+          },
         },
       ],
     },
