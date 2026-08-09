@@ -3,6 +3,7 @@
 import React from "react";
 import { Track } from "@/data/tracks";
 import { Navigation, Gauge, Clock, MapPin, ArrowRight } from "lucide-react";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 interface TrackCardProps {
   track: Track;
@@ -10,6 +11,8 @@ interface TrackCardProps {
 }
 
 export const TrackCard: React.FC<TrackCardProps> = ({ track, onSelectTrack }) => {
+  const { t } = useLanguage();
+
   return (
     <div className="group relative bg-white border border-slate-200 hover:border-sky-500/60 rounded-2xl p-5 md:p-6 transition-all duration-200 shadow-md hover:shadow-xl flex flex-col justify-between">
       {/* Top Banner Accent Line */}
@@ -41,7 +44,7 @@ export const TrackCard: React.FC<TrackCardProps> = ({ track, onSelectTrack }) =>
         <div className="grid grid-cols-2 gap-3 p-3 bg-slate-100/90 rounded-xl border border-slate-200 mb-5">
           <div className="flex flex-col items-center justify-center p-1 text-center">
             <span className="text-xs text-slate-500 font-semibold flex items-center gap-1">
-              <Clock className="w-3.5 h-3.5 text-slate-500" /> Distance
+              <Clock className="w-3.5 h-3.5 text-slate-500" /> {t("distance")}
             </span>
             <span className="text-base font-bold text-slate-900 mt-0.5">
               {track.distanceKm} <span className="text-xs text-slate-500 font-normal">km</span>
@@ -50,7 +53,7 @@ export const TrackCard: React.FC<TrackCardProps> = ({ track, onSelectTrack }) =>
 
           <div className="flex flex-col items-center justify-center p-1 text-center border-l border-slate-200">
             <span className="text-xs text-slate-500 font-semibold flex items-center gap-1">
-              <Gauge className="w-3.5 h-3.5 text-slate-500" /> Speed Limit
+              <Gauge className="w-3.5 h-3.5 text-slate-500" /> {t("speedLimit")}
             </span>
             <span className="text-base font-bold text-amber-600 mt-0.5">
               {track.speedLimitKmH} <span className="text-xs text-slate-500 font-normal">km/h</span>
@@ -65,7 +68,7 @@ export const TrackCard: React.FC<TrackCardProps> = ({ track, onSelectTrack }) =>
         className="w-full h-14 bg-sky-600 hover:bg-sky-500 active:bg-sky-700 text-white font-bold text-lg rounded-xl flex items-center justify-center gap-3 transition-all transform active:scale-[0.98] shadow-lg shadow-sky-600/20"
       >
         <Navigation className="w-6 h-6 fill-current" />
-        <span>Start Navigation</span>
+        <span>{t("startNavigation")}</span>
         <ArrowRight className="w-5 h-5 ml-auto mr-2 opacity-80 group-hover:translate-x-1 transition-transform" />
       </button>
     </div>

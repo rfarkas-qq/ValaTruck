@@ -4,6 +4,8 @@ import React, { useState, useEffect } from "react";
 import { Track } from "@/data/tracks";
 import { MapView } from "./map/MapView";
 import type { MapTileStyle } from "./map/MapContainerComponent";
+import { useLanguage } from "@/i18n/LanguageContext";
+import { LanguageSelector } from "./LanguageSelector";
 import {
   ArrowLeft,
   Compass,
@@ -26,6 +28,8 @@ interface NavigationViewProps {
 }
 
 export const NavigationView: React.FC<NavigationViewProps> = ({ track, onBackToRoutes }) => {
+  const { t } = useLanguage();
+
   // Extract polyline points for default position and simulation
   const lineFeature = track.geojson.features.find((f) => f.geometry.type === "LineString");
   const polylineCoords =
@@ -91,10 +95,10 @@ export const NavigationView: React.FC<NavigationViewProps> = ({ track, onBackToR
       console.warn("GPS Error:", err.message);
       if (err.code === err.PERMISSION_DENIED) {
         setGpsStatus("denied");
-        setErrorMessage("GPS Permission Denied. Switch to Simulation Mode to test navigation.");
+        setErrorMessage(`${t("gpsDenied")}. ${t("gpsDeniedDesc")}`);
       } else {
         setGpsStatus("denied");
-        setErrorMessage(`GPS Signal Lost (${err.message}). Using estimated site positioning.`);
+        setErrorMessage(`${t("gpsSignalLost")} (${err.message}). ${t("estimatedPositioning")}`);
       }
     };
 
@@ -107,7 +111,7 @@ export const NavigationView: React.FC<NavigationViewProps> = ({ track, onBackToR
     return () => {
       if (watchId) navigator.geolocation.clearWatch(watchId);
     };
-  }, [isSimulating]);
+  }, [isSimulating, t]);
 
   // Simulation movement ticker
   useEffect(() => {
@@ -186,7 +190,7 @@ export const NavigationView: React.FC<NavigationViewProps> = ({ track, onBackToR
             className="h-14 px-5 bg-white/95 backdrop-blur-md border border-slate-200 hover:border-sky-600 text-slate-950 font-bold rounded-2xl flex items-center gap-2.5 shadow-xl active:scale-95 transition-all shrink-0"
           >
             <ArrowLeft className="w-6 h-6 text-sky-600" />
-            <span className="hidden sm:inline text-base">Back to Routes</span>
+            <span className="hidden sm:inline text-base">{t("backToRoutes")}</span>
           </button>
 
           {/* Target Destination Header Card */}
@@ -198,7 +202,7 @@ export const NavigationView: React.FC<NavigationViewProps> = ({ track, onBackToR
                   style={{ backgroundColor: track.routeColor }}
                 />
                 <span className="text-xs font-bold text-slate-500 uppercase tracking-wider truncate">
-                  Target: {track.destinationName}
+                  {t("target")}: {track.destinationName}
                 </span>
               </div>
               <h2 className="text-lg md:text-xl font-extrabold text-slate-900 truncate">
@@ -208,10 +212,15 @@ export const NavigationView: React.FC<NavigationViewProps> = ({ track, onBackToR
 
             <div className="hidden md:flex items-center gap-3 shrink-0 pl-3 border-l border-slate-200 text-xs text-slate-600">
               <div className="text-right">
-                <div className="text-slate-400 font-medium">Limit</div>
+                <div className="text-slate-400 font-medium">{t("limit")}</div>
                 <div className="font-bold text-amber-600 text-sm">{track.speedLimitKmH} km/h</div>
               </div>
             </div>
+          </div>
+
+          {/* Language Selector */}
+          <div className="shrink-0">
+            <LanguageSelector />
           </div>
         </div>
 
@@ -222,7 +231,7 @@ export const NavigationView: React.FC<NavigationViewProps> = ({ track, onBackToR
           </div>
           <div className="flex-1 min-w-0">
             <div className="text-xs font-semibold text-sky-100 uppercase tracking-wider flex items-center gap-1.5">
-              <span>Waypoint #{currentWaypointIndex + 1} of {track.waypoints.length}</span>
+              <span>{t("waypoint")} #{currentWaypointIndex + 1} {t("of")} {track.waypoints.length}</span>
               <span>•</span>
               <span className="text-white font-bold">{currentWpt.name}</span>
             </div>
@@ -238,15 +247,15 @@ export const NavigationView: React.FC<NavigationViewProps> = ({ track, onBackToR
             <div className="flex items-center gap-3">
               <AlertTriangle className="w-6 h-6 text-rose-600 shrink-0" />
               <div>
-                <div className="font-bold text-rose-950">{errorMessage || "GPS Signal Unavailable"}</div>
-                <div className="text-xs text-rose-700">Click &quot;Start Simulation&quot; to test route guidance visually.</div>
+                <div className="font-bold text-rose-950">{errorMessage || t("gpsDenied")}</div>
+                <div className="text-xs text-rose-700">{t("gpsDeniedDesc")}</div>
               </div>
             </div>
             <button
               onClick={toggleSimulation}
               className="px-4 py-2 bg-rose-600 text-white font-bold rounded-xl text-xs uppercase tracking-wider shrink-0 hover:bg-rose-700 active:scale-95 transition-all"
             >
-              Start Simulation
+              {t("startSimulation")}
             </button>
           </div>
         )}
@@ -257,7 +266,7 @@ export const NavigationView: React.FC<NavigationViewProps> = ({ track, onBackToR
         {/* Recenter Map Button */}
         <button
           onClick={() => setAutoRecenter((prev) => !prev)}
-          title="Auto-Recenter Map on Truck"
+          title={t("recenterMap")}
           className={`w-14 h-14 rounded-2xl border flex items-center justify-center shadow-xl transition-all active:scale-95 ${
             autoRecenter
               ? "bg-sky-600 text-white border-sky-600 font-bold"
@@ -271,7 +280,7 @@ export const NavigationView: React.FC<NavigationViewProps> = ({ track, onBackToR
         <div className="relative">
           <button
             onClick={() => setIsLayerMenuOpen((prev) => !prev)}
-            title="Switch Map Tile Layer"
+            title={t("selectMapLayer")}
             className={`w-14 h-14 rounded-2xl border flex items-center justify-center shadow-xl transition-all active:scale-95 ${
               isLayerMenuOpen
                 ? "bg-sky-700 text-white border-sky-700 font-bold"
@@ -284,7 +293,7 @@ export const NavigationView: React.FC<NavigationViewProps> = ({ track, onBackToR
           {isLayerMenuOpen && (
             <div className="absolute right-16 top-0 bg-white/95 backdrop-blur-md border border-slate-200 rounded-2xl p-2 shadow-2xl flex flex-col gap-1 w-48 text-xs font-bold">
               <div className="px-3 py-1.5 text-[10px] uppercase font-bold text-slate-400 border-b border-slate-100">
-                Select Map Tile Layer
+                {t("selectMapLayer")}
               </div>
               <button
                 onClick={() => {
@@ -298,7 +307,7 @@ export const NavigationView: React.FC<NavigationViewProps> = ({ track, onBackToR
                 }`}
               >
                 <span>🗺</span>
-                <span>Standard OSM</span>
+                <span>{t("standardOsm")}</span>
               </button>
               <button
                 onClick={() => {
@@ -312,7 +321,7 @@ export const NavigationView: React.FC<NavigationViewProps> = ({ track, onBackToR
                 }`}
               >
                 <span>🛰</span>
-                <span>Esri Satellite</span>
+                <span>{t("esriSatellite")}</span>
               </button>
               <button
                 onClick={() => {
@@ -326,7 +335,7 @@ export const NavigationView: React.FC<NavigationViewProps> = ({ track, onBackToR
                 }`}
               >
                 <span>🎨</span>
-                <span>CARTO Voyager</span>
+                <span>{t("cartoVoyager")}</span>
               </button>
               <button
                 onClick={() => {
@@ -340,7 +349,7 @@ export const NavigationView: React.FC<NavigationViewProps> = ({ track, onBackToR
                 }`}
               >
                 <span>🌙</span>
-                <span>CARTO Dark</span>
+                <span>{t("cartoDark")}</span>
               </button>
             </div>
           )}
@@ -349,7 +358,7 @@ export const NavigationView: React.FC<NavigationViewProps> = ({ track, onBackToR
         {/* Simulation Movement Play/Pause */}
         <button
           onClick={toggleSimulation}
-          title={isSimulating ? "Pause GPS Simulation" : "Play GPS Simulation"}
+          title={isSimulating ? t("pauseSimulation") : t("playSimulation")}
           className={`w-14 h-14 rounded-2xl border flex items-center justify-center shadow-xl transition-all active:scale-95 ${
             isSimulating
               ? "bg-amber-500 text-white border-amber-500 font-bold animate-pulse"
@@ -363,7 +372,7 @@ export const NavigationView: React.FC<NavigationViewProps> = ({ track, onBackToR
         {isSimulating && (
           <button
             onClick={resetSimulation}
-            title="Reset Simulation to Start"
+            title={t("resetSimulation")}
             className="w-14 h-14 rounded-2xl bg-white/95 border border-slate-200 text-slate-700 hover:text-slate-900 flex items-center justify-center shadow-xl transition-all active:scale-95"
           >
             <RotateCcw className="w-6 h-6" />
@@ -379,7 +388,7 @@ export const NavigationView: React.FC<NavigationViewProps> = ({ track, onBackToR
             {/* Speedometer */}
             <div className="flex flex-col items-center justify-center p-2.5 bg-slate-100/90 rounded-xl border border-slate-200">
               <span className="text-[10px] text-slate-500 uppercase font-semibold flex items-center gap-1">
-                <Gauge className="w-3 h-3 text-sky-600" /> Speed
+                <Gauge className="w-3 h-3 text-sky-600" /> {t("speed")}
               </span>
               <div className="text-xl md:text-2xl font-black text-slate-900 mt-0.5">
                 {driverLocation.speed}{" "}
@@ -390,7 +399,7 @@ export const NavigationView: React.FC<NavigationViewProps> = ({ track, onBackToR
             {/* GPS Accuracy */}
             <div className="flex flex-col items-center justify-center p-2.5 bg-slate-100/90 rounded-xl border border-slate-200">
               <span className="text-[10px] text-slate-500 uppercase font-semibold flex items-center gap-1">
-                <Radio className="w-3 h-3 text-emerald-600" /> Accuracy
+                <Radio className="w-3 h-3 text-emerald-600" /> {t("accuracy")}
               </span>
               <div className="text-xl md:text-2xl font-black text-emerald-700 mt-0.5">
                 ±{Math.round(driverLocation.accuracy)}
@@ -401,7 +410,7 @@ export const NavigationView: React.FC<NavigationViewProps> = ({ track, onBackToR
             {/* Heading / Compass */}
             <div className="flex flex-col items-center justify-center p-2.5 bg-slate-100/90 rounded-xl border border-slate-200">
               <span className="text-[10px] text-slate-500 uppercase font-semibold flex items-center gap-1">
-                <Compass className="w-3 h-3 text-amber-600" /> Heading
+                <Compass className="w-3 h-3 text-amber-600" /> {t("heading")}
               </span>
               <div className="text-xl md:text-2xl font-black text-amber-600 mt-0.5">
                 {driverLocation.heading !== null ? `${driverLocation.heading}°` : "N/A"}
@@ -410,26 +419,26 @@ export const NavigationView: React.FC<NavigationViewProps> = ({ track, onBackToR
 
             {/* Signal Status */}
             <div className="flex flex-col items-center justify-center p-2.5 bg-slate-100/90 rounded-xl border border-slate-200">
-              <span className="text-[10px] text-slate-500 uppercase font-semibold">Mode</span>
+              <span className="text-[10px] text-slate-500 uppercase font-semibold">{t("mode")}</span>
               <div className="mt-1">
                 {gpsStatus === "simulated" && (
                   <span className="px-2 py-0.5 rounded bg-amber-100 text-amber-800 text-xs font-bold border border-amber-300">
-                    SIM
+                    {t("sim")}
                   </span>
                 )}
                 {gpsStatus === "active" && (
                   <span className="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 text-xs font-bold border border-emerald-300 flex items-center gap-1">
-                    <Wifi className="w-3 h-3 text-emerald-600" /> LIVE
+                    <Wifi className="w-3 h-3 text-emerald-600" /> {t("live")}
                   </span>
                 )}
                 {gpsStatus === "denied" && (
                   <span className="px-2 py-0.5 rounded bg-rose-100 text-rose-800 text-xs font-bold border border-rose-300 flex items-center gap-1">
-                    <WifiOff className="w-3 h-3 text-rose-600" /> OFF
+                    <WifiOff className="w-3 h-3 text-rose-600" /> {t("off")}
                   </span>
                 )}
                 {gpsStatus === "connecting" && (
                   <span className="px-2 py-0.5 rounded bg-slate-200 text-slate-700 text-xs font-bold animate-pulse">
-                    SYNC
+                    {t("sync")}
                   </span>
                 )}
               </div>
@@ -445,7 +454,7 @@ export const NavigationView: React.FC<NavigationViewProps> = ({ track, onBackToR
               LNG: <span className="text-slate-900 font-bold">{driverLocation.lng.toFixed(5)}°</span>
             </div>
             <div className="text-[10px] text-slate-400 mt-1">
-              Offline Vector Caching Active
+              {t("offlineCachingActive")}
             </div>
           </div>
         </div>

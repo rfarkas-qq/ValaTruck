@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import "./tailwind-compiled.css";
+import { LanguageProvider } from "@/i18n/LanguageContext";
 
 export const metadata: Metadata = {
   title: "ValaTruck - Private Site Navigation PWA",
@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="light">
       <body className="bg-driver-dark text-slate-900 antialiased min-h-screen">
-        {children}
+        <LanguageProvider>{children}</LanguageProvider>
         {/* Service Worker Registration / Localhost Cleanup */}
         <script
           dangerouslySetInnerHTML={{
