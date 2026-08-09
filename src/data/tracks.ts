@@ -18,11 +18,13 @@ export interface Track {
   estimatedMinutes: number;
   speedLimitKmH: number;
   maxGradientPercent: number;
+  isExternalOnly?: boolean;
   waypoints: TrackWaypoint[];
   geojson: FeatureCollection<LineString | Point>;
 }
 
 export const MOCK_TRACKS: Track[] = [
+  // Multi-point Site Routes from KML
   {
     id: "route-volvo-gate6-dock1",
     title: "Volvo Gate 6 - Dock 1 Propulsion",
@@ -190,6 +192,92 @@ export const MOCK_TRACKS: Track[] = [
           geometry: {
             type: "Point",
             coordinates: [21.27913406508455, 48.63533872783684],
+          },
+        },
+      ],
+    },
+  },
+
+  // Single-Point External Navigation Locations
+  {
+    id: "location-adient",
+    title: "Adient",
+    description: "Adient industrial manufacturing location & component logistics access point.",
+    destinationName: "Adient",
+    routeColor: "#8b5cf6", // Purple
+    distanceKm: 0,
+    estimatedMinutes: 0,
+    speedLimitKmH: 50,
+    maxGradientPercent: 0,
+    isExternalOnly: true,
+    waypoints: [
+      { name: "Adient", lat: 48.62260381624869, lng: 21.28008286960294, instruction: "Public Location - Navigate via external map application", type: "start" }
+    ],
+    geojson: {
+      type: "FeatureCollection",
+      features: [
+        {
+          type: "Feature",
+          properties: { name: "Adient", icon: "start" },
+          geometry: {
+            type: "Point",
+            coordinates: [21.28008286960294, 48.62260381624869],
+          },
+        },
+      ],
+    },
+  },
+  {
+    id: "location-pneuservis",
+    title: "Pneuservis",
+    description: "Tire service, maintenance hub, and vehicle repair workshop.",
+    destinationName: "Pneuservis",
+    routeColor: "#ec4899", // Pink
+    distanceKm: 0,
+    estimatedMinutes: 0,
+    speedLimitKmH: 50,
+    maxGradientPercent: 0,
+    isExternalOnly: true,
+    waypoints: [
+      { name: "Pneuservis", lat: 48.62293004440501, lng: 21.281928231532778, instruction: "Public Location - Navigate via external map application", type: "start" }
+    ],
+    geojson: {
+      type: "FeatureCollection",
+      features: [
+        {
+          type: "Feature",
+          properties: { name: "Pneuservis", icon: "start" },
+          geometry: {
+            type: "Point",
+            coordinates: [21.281928231532778, 48.62293004440501],
+          },
+        },
+      ],
+    },
+  },
+  {
+    id: "location-valaliky-industrial-park",
+    title: "Valaliky Industrial Park",
+    description: "Main industrial park entrance and logistics gate access.",
+    destinationName: "Valaliky Industrial Park",
+    routeColor: "#06b6d4", // Cyan
+    distanceKm: 0,
+    estimatedMinutes: 0,
+    speedLimitKmH: 50,
+    maxGradientPercent: 0,
+    isExternalOnly: true,
+    waypoints: [
+      { name: "Valaliky Industrial Park", lat: 48.630932338350966, lng: 21.27139954391473, instruction: "Public Location - Navigate via external map application", type: "start" }
+    ],
+    geojson: {
+      type: "FeatureCollection",
+      features: [
+        {
+          type: "Feature",
+          properties: { name: "Valaliky Industrial Park", icon: "start" },
+          geometry: {
+            type: "Point",
+            coordinates: [21.27139954391473, 48.630932338350966],
           },
         },
       ],

@@ -38,6 +38,9 @@ export const TRANSLATIONS = {
     startNavigation: "Start Navigation",
     navigateToStart: "Navigate to Start Point",
     startPoint: "Start",
+    externalLocation: "External Location",
+    navigateExternal: "Navigate via External Maps",
+    publicNavOnly: "Public External Navigation Only",
 
     // Navigation Header
     backToRoutes: "Back to Routes",
@@ -99,6 +102,9 @@ export const TRANSLATIONS = {
     startNavigation: "Spustiť navigáciu",
     navigateToStart: "Navigovať na začiatok trasy",
     startPoint: "Štart",
+    externalLocation: "Verejná lokalita",
+    navigateExternal: "Navigovať cez externé mapy",
+    publicNavOnly: "Len verejná externá navigácia",
 
     // Navigation Header
     backToRoutes: "Späť na trasy",
@@ -160,6 +166,9 @@ export const TRANSLATIONS = {
     startNavigation: "Pornește navigarea",
     navigateToStart: "Navighează la punctul de pornire",
     startPoint: "Start",
+    externalLocation: "Locație externă",
+    navigateExternal: "Navighează prin hărți externe",
+    publicNavOnly: "Doar navigare externă publică",
 
     // Navigation Header
     backToRoutes: "Înapoi la rute",
@@ -221,6 +230,9 @@ export const TRANSLATIONS = {
     startNavigation: "Navigáció indítása",
     navigateToStart: "Navigáció a kezdőponthoz",
     startPoint: "Start",
+    externalLocation: "Külső helyszín",
+    navigateExternal: "Navigáció külső térképpel",
+    publicNavOnly: "Csak nyilvános külső navigáció",
 
     // Navigation Header
     backToRoutes: "Vissza az útvonalakhoz",
@@ -282,6 +294,9 @@ export const TRANSLATIONS = {
     startNavigation: "Navigation starten",
     navigateToStart: "Zum Startpunkt navigieren",
     startPoint: "Start",
+    externalLocation: "Externer Standort",
+    navigateExternal: "Über externe Karten navigieren",
+    publicNavOnly: "Nur externe öffentliche Navigation",
 
     // Navigation Header
     backToRoutes: "Zurück zu den Routen",
@@ -343,6 +358,9 @@ export const TRANSLATIONS = {
     startNavigation: "Rozpocznij nawigację",
     navigateToStart: "Nawiguj do punktu startowego",
     startPoint: "Start",
+    externalLocation: "Lokalizacja zewnętrzna",
+    navigateExternal: "Nawiguj przez mapy zewnętrzne",
+    publicNavOnly: "Tylko nawigacja zewnętrzna",
 
     // Navigation Header
     backToRoutes: "Powrót do tras",
@@ -404,6 +422,9 @@ export const TRANSLATIONS = {
     startNavigation: "Spustit navigaci",
     navigateToStart: "Navigovat na začátek trasy",
     startPoint: "Start",
+    externalLocation: "Vnější lokalita",
+    navigateExternal: "Navigovat přes externí mapy",
+    publicNavOnly: "Pouze veřejná externí navigace",
 
     // Navigation Header
     backToRoutes: "Zpět na trasy",
@@ -465,6 +486,9 @@ export const TRANSLATIONS = {
     startNavigation: "Navigasyonu Başlat",
     navigateToStart: "Başlangıç Noktasına Yol Tarifi Al",
     startPoint: "Başlangıç",
+    externalLocation: "Harici Konum",
+    navigateExternal: "Harici Harita ile Yol Tarifi Al",
+    publicNavOnly: "Yalnızca Harici Navigasyon",
 
     // Navigation Header
     backToRoutes: "Rotalara Dön",
@@ -526,6 +550,9 @@ export const TRANSLATIONS = {
     startNavigation: "Розпочати навігацію",
     navigateToStart: "Навігація до точки старту",
     startPoint: "Старт",
+    externalLocation: "Зовнішня локація",
+    navigateExternal: "Навігація через зовнішні карти",
+    publicNavOnly: "Лише зовнішня навігація",
 
     // Navigation Header
     backToRoutes: "Назад до маршрутів",
