@@ -29,7 +29,7 @@ export interface Track {
 export const MOCK_TRACKS: Track[] = [
   {
     "id": "location-adient",
-    "title": "Adient",
+    "title": "Adient 2",
     "description": "Adient industrial manufacturing location & component logistics access point.",
     "destinationName": "Adient",
     "routeColor": "#8b5cf6",

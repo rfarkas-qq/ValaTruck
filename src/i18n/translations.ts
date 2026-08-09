@@ -26,6 +26,8 @@ export const TRANSLATIONS = {
     subTitle: "Gate 6 Industrial Site • Private Route Guidance System",
     gate6Hub: "Gate 6 Hub",
     reloadTracks: "Reload Tracks",
+    showTracks: "Show Tracks",
+    allTracksOverview: "All Tracks Overview",
 
     // Search
     searchPlaceholder: "Search route by title or destination...",
@@ -90,6 +92,8 @@ export const TRANSLATIONS = {
     subTitle: "Priemyselný areál Brána 6 • Súkromný navigátor nakladky",
     gate6Hub: "Uzol Brána 6",
     reloadTracks: "Obnoviť trasy",
+    showTracks: "Zobraziť trasy",
+    allTracksOverview: "Prehľad všetkých trás",
 
     // Search
     searchPlaceholder: "Hľadať trasu podľa názvu alebo cieľa...",
@@ -154,6 +158,8 @@ export const TRANSLATIONS = {
     subTitle: "Situl Industrial Poarta 6 • Sistem privat de navigare",
     gate6Hub: "Hub Poarta 6",
     reloadTracks: "Reîncarcă rutele",
+    showTracks: "Afișează rutele",
+    allTracksOverview: "Prezentare generală a tuturor rutelor",
 
     // Search
     searchPlaceholder: "Căutați ruta după titlu sau destinație...",
@@ -218,6 +224,8 @@ export const TRANSLATIONS = {
     subTitle: "6-os Kapu Ipari Terület • Magán útvonalnavigáció",
     gate6Hub: "6-os Kapu Központ",
     reloadTracks: "Útvonalak újratöltése",
+    showTracks: "Útvonalak megjelenítése",
+    allTracksOverview: "Összes útvonal áttekintése",
 
     // Search
     searchPlaceholder: "Útvonal keresése név vagy cél szerint...",
@@ -282,6 +290,8 @@ export const TRANSLATIONS = {
     subTitle: "Industriegelände Tor 6 • Privates Routennavigationssystem",
     gate6Hub: "Tor 6 Hub",
     reloadTracks: "Routen neu laden",
+    showTracks: "Routen anzeigen",
+    allTracksOverview: "Übersicht aller Routen",
 
     // Search
     searchPlaceholder: "Route nach Name oder Ziel suchen...",
@@ -346,6 +356,8 @@ export const TRANSLATIONS = {
     subTitle: "Teren Przemysłowy Brama 6 • Prywatny System Nawigacji",
     gate6Hub: "Baza Brama 6",
     reloadTracks: "Odśwież trasy",
+    showTracks: "Pokaż trasy",
+    allTracksOverview: "Przegląd wszystkich tras",
 
     // Search
     searchPlaceholder: "Szukaj trasy według nazwy lub celu...",
@@ -410,6 +422,8 @@ export const TRANSLATIONS = {
     subTitle: "Průmyslový areál Brána 6 • Soukromá navigace nákladní dopravy",
     gate6Hub: "Uzel Brána 6",
     reloadTracks: "Obnovit trasy",
+    showTracks: "Zobrazit trasy",
+    allTracksOverview: "Přehled všech tras",
 
     // Search
     searchPlaceholder: "Hledat trasu podle názevu nebo cíle...",
@@ -474,6 +488,8 @@ export const TRANSLATIONS = {
     subTitle: "Kapı 6 Sanayi Sahası • Özel Güzergah Navigasyon Sistemi",
     gate6Hub: "Kapı 6 Merkezi",
     reloadTracks: "Rotaları Yenile",
+    showTracks: "Rotaları Göster",
+    allTracksOverview: "Tüm Rotalara Genel Bakış",
 
     // Search
     searchPlaceholder: "Rota adıyla veya hedefle arayın...",
@@ -538,6 +554,8 @@ export const TRANSLATIONS = {
     subTitle: "Промзона Ворота 6 • Приватна навігаційна система",
     gate6Hub: "Вузол Ворота 6",
     reloadTracks: "Оновити маршрути",
+    showTracks: "Показати маршрути",
+    allTracksOverview: "Огляд усіх маршрутів",
 
     // Search
     searchPlaceholder: "Пошук маршруту за назвою або пунктом призначення...",

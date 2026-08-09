@@ -3,15 +3,16 @@
 import React, { useState } from "react";
 import { Track, MOCK_TRACKS } from "@/data/tracks";
 import { TrackCard } from "./TrackCard";
-import { Truck, Wifi, Search, Info, RotateCcw } from "lucide-react";
+import { Truck, Wifi, Search, Info, RotateCcw, Map } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { LanguageSelector } from "./LanguageSelector";
 
 interface TrackListScreenProps {
   onSelectTrack: (trackId: string) => void;
+  onShowTracks: () => void;
 }
 
-export const TrackListScreen: React.FC<TrackListScreenProps> = ({ onSelectTrack }) => {
+export const TrackListScreen: React.FC<TrackListScreenProps> = ({ onSelectTrack, onShowTracks }) => {
   const [tracks, setTracks] = useState<Track[]>(MOCK_TRACKS);
   const [searchQuery, setSearchQuery] = useState("");
   const [isReloading, setIsReloading] = useState(false);
@@ -65,7 +66,17 @@ export const TrackListScreen: React.FC<TrackListScreenProps> = ({ onSelectTrack 
             </p>
           </div>
 
-          <div className="flex items-center gap-3 shrink-0">
+          <div className="flex flex-wrap items-center gap-3 shrink-0">
+            {/* Show Tracks Overview Button */}
+            <button
+              onClick={onShowTracks}
+              className="h-10 px-3.5 bg-sky-600 hover:bg-sky-500 active:bg-sky-700 text-white font-bold rounded-xl flex items-center gap-2 text-xs shadow-md shadow-sky-600/20 active:scale-95 transition-all"
+              title={t("showTracks")}
+            >
+              <Map className="w-4 h-4" />
+              <span>{t("showTracks")}</span>
+            </button>
+
             {/* Reload Tracks Button */}
             <button
               onClick={handleReloadTracks}
