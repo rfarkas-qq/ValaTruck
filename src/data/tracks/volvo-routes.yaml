@@ -42,7 +42,7 @@
   title: Volvo Gate 3 - Utility Building
   description: Northern perimeter haul track connecting Gate 3 entrance to Central Utility Building.
   destinationName: Utility Building
-  routeColor: "#10b981"
+  routeColor: "#10b991"
   distanceKm: 0.85
   estimatedMinutes: 2
   speedLimitKmH: 40
